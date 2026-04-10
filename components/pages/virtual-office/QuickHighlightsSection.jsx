@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function QuickHighlightsSection() {
   const highlights = [
@@ -22,7 +22,7 @@ export default function QuickHighlightsSection() {
         </div>
 
         <div className="text-center">
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -30,7 +30,7 @@ export default function QuickHighlightsSection() {
             className="text-4xl md:text-6xl font-black tracking-tight text-primary mb-6 leading-tight">
             Perfect for Modern Businesses
 
-          </motion.h2>
+          </m.h2>
         </div>
 
         {/* 2 Row Grid - 3 items per row on desktop */}

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Monitor,
   Briefcase,
@@ -67,7 +67,7 @@ export default function SolutionsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -77,9 +77,9 @@ export default function SolutionsSection() {
             <span className="text-[10px] font-black tracking-[0.3em] uppercase text-primary">
               Our Solutions
             </span>
-          </motion.div>
+          </m.div>
 
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -87,10 +87,10 @@ export default function SolutionsSection() {
             className="text-4xl md:text-6xl font-black tracking-tight text-primary mb-6 leading-tight">
             Flexible Spaces. <br />
             Powerful Possibilities.
-          </motion.h2>
+          </m.h2>
         </div>
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -98,7 +98,7 @@ export default function SolutionsSection() {
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {solutions.map((solution, idx) => (
-            <motion.article
+            <m.article
               key={solution.title}
               variants={itemVariants}
               whileHover={{ y: -10 }}
@@ -119,11 +119,11 @@ export default function SolutionsSection() {
               {/* <div className="flex items-center gap-2 text-highlight font-bold text-sm uppercase tracking-wider opacity-100 group-hover:opacity-100 transition-opacity duration-300">
                 Learn More <ArrowRight className="w-4 h-4" />
               </div>*/}
-            </motion.article>
+            </m.article>
           ))}
 
           {/* CTA Card */}
-          <motion.div
+          <m.div
             variants={itemVariants}
             className="bg-highlight p-10 rounded-3xl flex flex-col justify-center text-white"
           >
@@ -132,8 +132,8 @@ export default function SolutionsSection() {
             <Link href="/contact" className="block bg-white text-highlight font-black py-4 rounded-xl uppercase tracking-widest text-sm hover:scale-105 transition-transform text-center">
               Contact Sales
             </Link>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

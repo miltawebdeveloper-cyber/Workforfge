@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Lock, ChevronRight } from "lucide-react";
 
 const sections = [
@@ -47,8 +44,7 @@ const sections = [
   {
     number: "05",
     title: "Data Security",
-    content:
-      "Workforge implements strict security measures, including:",
+    content: "Workforge implements strict security measures, including:",
     list: [
       "Secure data storage systems",
       "Controlled access to sensitive information",
@@ -58,8 +54,6 @@ const sections = [
   {
     number: "06",
     title: "Cookies & Website Tracking",
-
-
     list: [
       "Cookies may be used on our website to enhance analytics and user experience.",
       "Users can control cookie preferences through browser settings",
@@ -78,12 +72,8 @@ const sections = [
   {
     number: "08",
     title: "Data Retention",
-    content:
-      "Workforge retains your data only as long as necessary for:",
-    list: [
-      "Service delivery",
-      "Legal and compliance requirements",
-    ],
+    content: "Workforge retains your data only as long as necessary for:",
+    list: ["Service delivery", "Legal and compliance requirements"],
   },
   {
     number: "09",
@@ -99,17 +89,9 @@ const sections = [
   },
 ];
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5 },
-};
-
 export default function PrivacyPolicyContent() {
   return (
     <>
-      {/* Hero */}
       <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-[#fafafa] overflow-hidden">
         <div
           className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
@@ -120,49 +102,33 @@ export default function PrivacyPolicyContent() {
         ></div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div {...fadeInUp}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm mb-8">
-              <Lock className="w-4 h-4 text-highlight" />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-primary">
-                Your Privacy Matters
-              </span>
-            </div>
-          </motion.div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm mb-8">
+            <Lock className="w-4 h-4 text-highlight" />
+            <span className="text-[10px] font-black tracking-[0.3em] uppercase text-primary">
+              Your Privacy Matters
+            </span>
+          </div>
 
-          <motion.h1
-            {...fadeInUp}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-primary leading-[0.95] mb-6"
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-primary leading-[0.95] mb-6">
             Privacy <span className="text-highlight">Policy</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            {...fadeInUp}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-slate-500 font-medium text-base md:text-lg max-w-xl mx-auto"
-          >
-            We value your trust. This policy outlines how Workforge
-            collects, uses, and protects your personal information.
-          </motion.p>
+          <p className="text-slate-500 font-medium text-base md:text-lg max-w-xl mx-auto">
+            We value your trust. This policy outlines how Workforge collects,
+            uses, and protects your personal information.
+          </p>
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="space-y-0">
-            {sections.map((section, idx) => (
-              <motion.div
+            {sections.map((section) => (
+              <div
                 key={section.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.04, duration: 0.5 }}
                 className="group border-b border-slate-100 last:border-0"
               >
                 <div className="py-10 md:py-14">
-                  {/* Section Header */}
                   <div className="flex items-start gap-4 md:gap-6 mb-5">
                     <span className="text-[11px] font-black tracking-widest text-highlight/40 mt-1.5 shrink-0">
                       {section.number}
@@ -172,7 +138,6 @@ export default function PrivacyPolicyContent() {
                     </h2>
                   </div>
 
-                  {/* Section Body */}
                   <div className="pl-8 md:pl-14">
                     {section.content && (
                       <p className="text-slate-600 font-light leading-relaxed text-base md:text-lg mb-4">
@@ -195,16 +160,11 @@ export default function PrivacyPolicyContent() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* Footer Note */}
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.3 }}
-            className="mt-16 p-6 md:p-10 bg-slate-50 border border-slate-100 rounded-2xl text-center"
-          >
+          <div className="mt-16 p-6 md:p-10 bg-slate-50 border border-slate-100 rounded-2xl text-center">
             <p className="text-[10px] font-black tracking-[0.3em] uppercase text-highlight mb-3">
               Last Updated
             </p>
@@ -218,7 +178,7 @@ export default function PrivacyPolicyContent() {
                 contact@workforge.in
               </a>
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

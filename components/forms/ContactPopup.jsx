@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import InquiryForm from "./InquiryForm";
 
@@ -32,7 +32,7 @@ export default function ContactPopup({ isOpen, onClose }) {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -41,7 +41,7 @@ export default function ContactPopup({ isOpen, onClose }) {
           />
 
           {/* Panel */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.97 }}
@@ -76,9 +76,10 @@ export default function ContactPopup({ isOpen, onClose }) {
                 <InquiryForm />
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>
   );
 }
+

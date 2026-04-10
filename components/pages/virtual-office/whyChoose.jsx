@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 export default function WhyChoose() {
@@ -19,19 +19,19 @@ export default function WhyChoose() {
           <h2 className="text-xs font-bold tracking-[0.3em] uppercase text-[#0047cc] mb-4">
             WHY CHOOSE WORKFORGE
           </h2>
-          <motion.h3
+          <m.h3
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight"
           >
             Trusted Virtual Office Partner
-          </motion.h3>
+          </m.h3>
         </div>
 
         <div className="grid gap-6 md:grid-cols-6">
           {reasons.map((reason, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -43,10 +43,11 @@ export default function WhyChoose() {
               <p className="text-lg font-bold text-slate-800 tracking-tight">
                 {reason}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+

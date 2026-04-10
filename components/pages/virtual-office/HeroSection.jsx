@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, MousePointer2, CheckCircle, MapPin } from "lucide-react";
 import ContactPopup from "@/components/forms/ContactPopup";
 
@@ -28,7 +28,7 @@ export default function HeroSection() {
 
       {/* Dynamic Visual Layer */}
       <div className="absolute top-0 right-0 w-full lg:w-[60%] h-full z-0">
-        <motion.div
+        <m.div
           initial={{ clipPath: "inset(0 0 0 100%)" }}
           animate={{ clipPath: "inset(0 0 0 0%)" }}
           transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
@@ -38,62 +38,63 @@ export default function HeroSection() {
             src="/VirtualOffice.jpg"
             alt="WorkForge premium virtual office in Coimbatore"
             fill
+            sizes="(max-width: 1024px) 100vw, 60vw"
             priority
             className="object-cover grayscale active-grayscale-0 transition-all duration-1000 opacity-40 lg:opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#fafafa] via-[#fafafa]/80 lg:via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa] via-transparent to-[#fafafa]"></div>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Content Architecture */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="initial"
           animate="animate"
           className="lg:max-w-3xl"
         >
           {/* Status Badge */}
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm">
+          <m.div variants={fadeInUp} className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-white border border-slate-200 rounded-full shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-highlight opacity-145"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-highlight"></span>
             </span>
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Space That Works for You</span>
-          </motion.div>
+          </m.div>
 
           {/* Unique Typographic Stack */}
           <div className="relative mb-10">
             {/* 
-<motion.h1
+<m.h1
   variants={fadeInUp}
   className="text-6xl md:text-8xl lg:text-[11rem] font-black tracking-tighter leading-[0.8] text-primary">
   Work<span className="text-highlight">Forge</span>
-</motion.h1>
+</m.h1>
 */}
 
 
 
-            <motion.h2
+            <m.h2
               variants={fadeInUp}
               className="text-3xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight text-[#1d45cc] leading-[1.1]">
               Virtual Office in Coimbatore
               <br />
               <span className="text-primary font-bold italic"> at WorkForge</span>
-            </motion.h2>
+            </m.h2>
           </div>
 
           {/* Value Proposition */}
-          <motion.div variants={fadeInUp} className="flex flex-col md:flex-row gap-8 mb-12 items-start">
+          <m.div variants={fadeInUp} className="flex flex-col md:flex-row gap-8 mb-12 items-start">
             <p className="max-w-sm text-lg text-slate-500 font-medium border-l border-slate-200 pl-6 leading-relaxed">
               Get a professional business address with complete compliance support—without the cost of a physical office.
             </p>
 
-          </motion.div>
+          </m.div>
 
           {/* Core Actions */}
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
+          <m.div variants={fadeInUp} className="flex flex-wrap gap-5">
             <Link href="/contact" className="group relative px-10 py-5 bg-primary text-white font-black uppercase tracking-widest rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(33,89,220,0.2)] inline-flex items-center gap-2">
               <span className="relative z-10 flex items-center gap-2">
                 Book A Tour <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -103,14 +104,14 @@ export default function HeroSection() {
             <button onClick={() => setShowPopup(true)} className="px-10 py-5 border border-slate-200 text-primary font-bold uppercase tracking-widest hover:border-highlight hover:bg-white transition-all duration-300 rounded-sm">
               View Pricing
             </button>
-          </motion.div>
+          </m.div>
 
           <ContactPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Floating Location Access - Unique UI element */}
-      {/*<motion.div
+      {/*<m.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 1 }}
@@ -129,10 +130,11 @@ export default function HeroSection() {
           <div className="h-[1px] bg-primary/5"></div>
           <p className="text-xs text-slate-500 font-medium">Filling Fast – Limited Seats Available</p>
         </div>
-      </motion.div>*/}
+      </m.div>*/}
 
       {/* Decorative vertical line */}
       <div className="absolute top-0 left-12 w-[1px] h-full bg-slate-100 hidden lg:block"></div>
     </section>
   );
 }
+

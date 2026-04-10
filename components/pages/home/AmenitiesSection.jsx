@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Wifi,
   Zap,
@@ -33,7 +33,7 @@ export default function AmenitiesSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-8">
           <div className="max-w-2xl">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -43,9 +43,9 @@ export default function AmenitiesSection() {
               <span className="text-xs font-black tracking-[0.4em] uppercase text-highlight">
                 Workspace Amenities
               </span>
-            </motion.div>
+            </m.div>
 
-            <motion.h2
+            <m.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,10 +53,10 @@ export default function AmenitiesSection() {
               className="text-4xl md:text-6xl font-black tracking-tight text-primary leading-tight">
               Everything You Need to <br />
               Work Better With Us
-            </motion.h2>
+            </m.h2>
           </div>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -64,12 +64,12 @@ export default function AmenitiesSection() {
             className="text-lg text-slate-500 max-w-sm font-medium border-l-2 border-slate-100 pl-8"
           >
             We handle the infrastructure so you can handle the innovation.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {amenities.map((item, idx) => (
-            <motion.div
+            <m.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export default function AmenitiesSection() {
 
               {/* Subtle accent hover line */}
               <div className="absolute -bottom-6 left-0 w-0 h-[2px] bg-highlight/20 group-hover:w-full transition-all duration-700"></div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

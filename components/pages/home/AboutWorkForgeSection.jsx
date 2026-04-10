@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2, Users, Building2, Clock, MapPin } from "lucide-react";
 
 export default function AboutWorkForgeSection() {
@@ -17,7 +17,7 @@ export default function AboutWorkForgeSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Content */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -55,10 +55,10 @@ export default function AboutWorkForgeSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Side: Image with Decorative Elements */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -71,6 +71,7 @@ export default function AboutWorkForgeSection() {
                 src="/about-space.png"
                 alt="WorkForge Interior"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
@@ -92,7 +93,7 @@ export default function AboutWorkForgeSection() {
             {/* Background Decorative Boxes */}
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-slate-50 -z-10 rounded-full"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 border-8 border-highlight/10 -z-10 rounded-2xl"></div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
