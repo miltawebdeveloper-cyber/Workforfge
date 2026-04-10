@@ -5,10 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { m, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ContactPopup from "@/components/forms/ContactPopup";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,12 +92,13 @@ export default function Header() {
             ))}
           </ul>
 
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={() => setShowPopup(true)}
             className="px-8 py-3 bg-primary text-white text-[11px] font-black tracking-widest uppercase rounded-sm hover:bg-highlight hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-primary/10"
           >
             Book a Tour
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -129,19 +132,23 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="pt-6 pb-2">
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setShowPopup(true);
+                    }}
                     className="block w-full text-center px-8 py-4 bg-primary text-white text-xs font-black tracking-widest uppercase rounded-sm shadow-md hover:bg-highlight transition-colors"
                   >
                     Book a Tour
-                  </Link>
+                  </button>
                 </div>
               </div>
             </m.div>
           )}
         </AnimatePresence>
       </nav>
+      <ContactPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
     </header>
   );
 }

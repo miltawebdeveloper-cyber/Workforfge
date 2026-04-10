@@ -1,12 +1,16 @@
 export const metadata = {
   title: "Premium Coworking Space in Coimbatore | WorkForge Offices",
-  description: "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions—24/7 access.",
+  verification: {
+    google: "QnbxCN4kS2oK0_48At-DDDJFB7HwprXS6WUXZGVRVRU",
+  },
+  description:
+    "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions-24/7 access.",
   keywords: [
     "business outsourcing services",
     "accounting services for small business",
     "finance and accounting outsourcing",
     "outsource accounting services",
-    "virtual cfo services"
+    "virtual cfo services",
   ],
   authors: [{ name: "Workforge" }],
   alternates: {
@@ -14,7 +18,8 @@ export const metadata = {
   },
   openGraph: {
     title: "Premium Coworking Space in Coimbatore | WorkForge Offices",
-    description: "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions—24/7 access.",
+    description:
+      "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions-24/7 access.",
     url: "https://www.workforge.in/",
     siteName: "https://www.workforge.in/",
     images: [
@@ -27,7 +32,8 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "Premium Coworking Space in Coimbatore | WorkForge Offices",
-    description: "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions—24/7 access.",
+    description:
+      "We offer premium coworking space in Coimbatore with private offices, dedicated desks, and virtual office solutions-24/7 access.",
     images: ["https://www.workforge.in/og-logo.png"],
   },
   other: {
@@ -38,8 +44,8 @@ export const metadata = {
     Rating: "general",
     "search engines": "ALL",
     copyright: "https://www.workforge.in/",
-    email: "contact@workforge.in"
-  }
+    email: "contact@workforge.in",
+  },
 };
 
 import {
@@ -60,7 +66,6 @@ export default function Home() {
       <AboutWorkForgeSection />
       <SolutionsSection />
       <AmenitiesSection />
-
       <FinalCtaSection />
     </main>
   );
