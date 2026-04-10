@@ -24,9 +24,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobileMenuOpen]); // Add isMobileMenuOpen as dependency
 
-  // Lock body scroll when mobile menu is open
+  // Keep body scroll locked while mobile menu or contact popup is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen || showPopup) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -34,7 +34,7 @@ export default function Header() {
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, showPopup]);
 
   // Close mobile menu when resizing to desktop
   useEffect(() => {
