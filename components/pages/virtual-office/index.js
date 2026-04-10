@@ -1,0 +1,8 @@
+export { default as VirtualOfficeDetailsSection } from "./VirtualOfficeDetailsSection";
+export { default as VirtualOfficeHeroSection } from "./VirtualOfficeHeroSection";
+export { default as Intro } from "./Intro";
+export { default as HeroSection } from "./HeroSection";
+export { default as SolutionsSection } from "./SolutionsSection";
+export { default as QuickHighlightsSection } from "./QuickHighlightsSection";
+export { default as FinalCtaSection } from "./FinalCtaSection";
+export { default as WhyChoose } from "./whyChoose";
