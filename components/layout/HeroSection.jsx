@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, MousePointer2, CheckCircle, MapPin } from "lucide-react";
+import ContactPopup from "@/components/forms/ContactPopup";
 
 export default function HeroSection() {
+  const [showPopup, setShowPopup] = useState(false);
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -44,7 +48,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content Architecture */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <motion.div 
           variants={staggerContainer}
           initial="initial"
@@ -64,7 +68,7 @@ export default function HeroSection() {
           <div className="relative mb-10">
             <motion.h1 
               variants={fadeInUp}
-              className="text-6xl md:text-8xl lg:text-[11rem] font-black tracking-tighter leading-[0.8] text-primary"
+              className="text-5xl sm:text-6xl md:text-8xl lg:text-[11rem] font-black tracking-tighter leading-[0.8] text-primary"
             >
               Work<span className="text-highlight">Forge</span>
             </motion.h1>
@@ -100,17 +104,19 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Core Actions */}
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
-            <button className="group relative px-10 py-5 bg-primary text-white font-black uppercase tracking-widest rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(33,89,220,0.2)]">
-              <span className="relative z-10 flex items-center gap-2">
-                Book Private Tour <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-5 w-full">
+            <Link href="/contact" className="group w-full sm:w-auto relative px-8 py-5 bg-primary text-white font-black uppercase tracking-widest rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(33,89,220,0.2)] flex justify-center">
+              <span className="relative z-10 flex items-center justify-center gap-2 text-center">
+                Book Private Tour <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform shrink-0" />
               </span>
               <div className="absolute inset-0 bg-highlight translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
-            </button>
-            <button className="px-10 py-5 border border-slate-200 text-primary font-bold uppercase tracking-widest hover:border-highlight hover:bg-white transition-all duration-300 rounded-sm">
+            </Link>
+            <button onClick={() => setShowPopup(true)} className="w-full sm:w-auto px-8 py-5 border border-slate-200 text-primary font-bold uppercase tracking-widest hover:border-highlight hover:bg-white transition-all duration-300 rounded-sm text-center flex justify-center items-center">
               View Pricing
             </button>
           </motion.div>
+
+          <ContactPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
         </motion.div>
       </div>
 

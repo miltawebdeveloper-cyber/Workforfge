@@ -13,9 +13,36 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      // Close mobile menu when scrolling
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobileMenuOpen]); // Add isMobileMenuOpen as dependency
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu when resizing to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navLinks = [
@@ -29,12 +56,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "py-4 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm"
-        : "py-4 bg-transparent"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
+          ? "py-3 md:py-4 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
+          : "py-4 md:py-6 bg-transparent"
         }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <nav className="w-full max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" className="relative z-50 flex items-center">
           <Image
@@ -43,7 +70,7 @@ export default function Header() {
             width={140}
             height={90}
             priority
-            className={`h-16 w-auto object-contain transition-all duration-300 ${isScrolled ? "scale-95" : "scale-100"}`}
+            className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${(isScrolled || isMobileMenuOpen) ? "scale-90 md:scale-95" : "scale-100"}`}
           />
         </Link>
 
@@ -73,42 +100,44 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden relative z-50 p-2 text-primary"
+          className="lg:hidden relative z-50 p-2 text-primary focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Drawer / Dropdown */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center lg:hidden"
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xl flex flex-col lg:hidden"
             >
-              <ul className="flex flex-col items-center gap-10">
+              <div className="flex flex-col px-6 py-6 gap-2 max-h-[80vh] overflow-y-auto">
                 {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-3xl font-black uppercase tracking-tight text-primary hover:text-highlight transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="py-4 text-[13px] font-bold uppercase tracking-widest text-primary hover:text-highlight transition-colors border-b border-slate-50 last:border-0"
+                  >
+                    {link.name}
+                  </Link>
                 ))}
-              </ul>
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-12 px-12 py-5 bg-primary text-white text-sm font-black tracking-widest uppercase rounded-md shadow-xl"
-              >
-                Schedule Visit
-              </Link>
+                <div className="pt-6 pb-2">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block w-full text-center px-8 py-4 bg-primary text-white text-xs font-black tracking-widest uppercase rounded-sm shadow-md hover:bg-highlight transition-colors"
+                  >
+                    Book a Tour
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

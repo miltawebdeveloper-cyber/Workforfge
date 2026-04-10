@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-16 bg-white border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="py-12 sm:py-16 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Left Column - Brand */}
@@ -70,11 +70,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400">
             © 2026 WorkForge. Built for growing teams.
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             <a href="#" className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400 hover:text-[#0047cc] transition-colors">
               Privacy Policy
             </a>

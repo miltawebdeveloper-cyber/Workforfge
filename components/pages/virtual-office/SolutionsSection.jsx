@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 import {
@@ -125,9 +126,9 @@ export default function SolutionsSection() {
           >
             <h3 className="text-3xl font-black mb-6 leading-tight">CA Support</h3>
             <p className="text-white/80 font-medium mb-8">Professional assistance for compliance and filings.</p>
-            <button className="bg-white text-highlight font-black py-4 rounded-xl uppercase tracking-widest text-sm hover:scale-105 transition-transform">
-              Contact Us
-            </button>
+            <Link href="/contact" className="block bg-white text-highlight font-black py-4 rounded-xl uppercase tracking-widest text-sm hover:scale-105 transition-transform text-center">
+              Contact Sales
+            </Link>
           </motion.div>
         </motion.div>
       </div>
