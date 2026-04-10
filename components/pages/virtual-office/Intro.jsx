@@ -13,7 +13,7 @@ export default function AboutWorkForgeSection() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-white overflow-hidden">
+    <section id="about" className="py-32 bg-white overflow-hidden relative z-0">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Content */}
@@ -57,7 +57,7 @@ export default function AboutWorkForgeSection() {
             className="relative order-2 lg:order-1"
           >
             {/* Main Image Container */}
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square">
+            <div className="relative z-[1] rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square">
               <Image
                 src="/space2.jpg"
                 alt="WorkForge Interior"
