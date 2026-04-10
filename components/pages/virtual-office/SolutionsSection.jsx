@@ -61,12 +61,12 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section id="solutions" className="py-32 bg-slate-50 relative overflow-hidden">
+    <section id="solutions" className="py-16 md:py-32 bg-slate-50 relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-highlight/5 rounded-full blur-[120px]"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function SolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-primary mb-6 leading-tight">
+            className="text-3xl md:text-6xl font-black tracking-tight text-primary mb-6 leading-tight">
             Complete Virtual <br /> Office Solutions
           </motion.h2>
         </div>
@@ -94,14 +94,14 @@ export default function SolutionsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {solutions.map((solution, idx) => (
             <motion.article
               key={solution.title}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="group bg-white p-10 rounded-3xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(33,89,220,0.1)] hover:border-highlight/20"
+              className="group bg-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(33,89,220,0.1)] hover:border-highlight/20"
             >
               <div className={`w-14 h-14 rounded-2xl ${solution.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
                 {solution.icon}
@@ -122,7 +122,7 @@ export default function SolutionsSection() {
           {/* CTA Card */}
           <motion.div
             variants={itemVariants}
-            className="bg-highlight p-10 rounded-3xl flex flex-col justify-center text-white"
+            className="bg-highlight p-6 sm:p-10 rounded-2xl sm:rounded-3xl flex flex-col justify-center text-white"
           >
             <h3 className="text-3xl font-black mb-6 leading-tight">CA Support</h3>
             <p className="text-white/80 font-medium mb-8">Professional assistance for compliance and filings.</p>

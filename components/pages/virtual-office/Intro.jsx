@@ -13,9 +13,9 @@ export default function AboutWorkForgeSection() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-white overflow-hidden relative z-0">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-16 md:py-32 bg-white overflow-hidden relative z-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Side: Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -31,12 +31,12 @@ export default function AboutWorkForgeSection() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-primary mb-8 leading-[1.1]">
+            <h2 className="text-3xl md:text-6xl font-black tracking-tight text-primary mb-6 md:mb-8 leading-[1.1]">
               Build Your Business Presence
               <span className="text-highlight"> Without the Overhead</span>
             </h2>
 
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed mb-12">
+            <div className="space-y-4 md:space-y-6 text-base md:text-lg text-slate-600 leading-relaxed mb-8 md:mb-12">
               <p className="font-medium text-slate-900">
                 WorkForge offers reliable virtual office space in Coimbatore, helping businesses register, operate, and grow with ease.
               </p>
@@ -67,7 +67,7 @@ export default function AboutWorkForgeSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
 
               {/* Floating Badge */}
-              <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/90 backdrop-blur-md rounded-xl border border-white/20 shadow-xl">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 p-4 sm:p-6 bg-white/90 backdrop-blur-md rounded-xl border border-white/20 shadow-xl">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-highlight rounded-lg flex items-center justify-center text-white shrink-0">
                     <CheckCircle2 className="w-6 h-6" />

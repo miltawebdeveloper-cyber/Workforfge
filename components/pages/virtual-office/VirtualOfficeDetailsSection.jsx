@@ -16,8 +16,8 @@ export default function VirtualOfficeDetailsSection() {
   ];
 
   return (
-    <section className="pb-28 bg-white">
-      <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-2">
+    <section className="pb-16 md:pb-28 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid gap-6 md:gap-8 md:grid-cols-2">
         <article className="border border-slate-200 bg-slate-50 p-8">
           <h2 className="text-2xl font-black tracking-tight text-primary mb-6">Includes</h2>
           <ul className="space-y-3">

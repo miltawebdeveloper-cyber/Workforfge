@@ -61,9 +61,9 @@ export default function Footer() {
             <h5 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-6 text-[#0047cc]/60">
               Legal
             </h5>
-            <div className="space-y-2 text-sm text-slate-500 font-light">
-              <p className="hover:text-[#0047cc] transition-colors cursor-pointer">Privacy Policy</p>
-              <p className="hover:text-[#0047cc] transition-colors cursor-pointer">Terms of Service</p>
+            <div className="space-y-2 text-sm text-slate-500 font-light flex flex-col">
+              <Link href="/privacy-policy" className="hover:text-[#0047cc] transition-colors cursor-pointer">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="hover:text-[#0047cc] transition-colors cursor-pointer">Terms of Service</Link>
 
             </div>
           </div>
@@ -75,12 +75,12 @@ export default function Footer() {
             © 2026 WorkForge. Built for growing teams.
           </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            <a href="#" className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400 hover:text-[#0047cc] transition-colors">
+            <Link href="/privacy-policy" className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400 hover:text-[#0047cc] transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400 hover:text-[#0047cc] transition-colors">
+            </Link>
+            <Link href="/terms-of-service" className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-400 hover:text-[#0047cc] transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

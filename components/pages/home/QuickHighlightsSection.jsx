@@ -9,8 +9,8 @@ export default function QuickHighlightsSection() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 border-y border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 md:py-20 bg-slate-50 border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Heading with divider */}
         <div className="flex items-center justify-center mb-6">
           <div className="w-12 h-0.5 bg-[#0047cc] mr-3"></div>
