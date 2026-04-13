@@ -5,87 +5,125 @@ const sections = [
     number: "01",
     title: "Introduction",
     content:
-      "At Workforge, we're dedicated to safeguarding your privacy and making sure that your information is handled transparently.",
+      "We at Workforge.in are dedicated to preserving your privacy and guaranteeing openness regarding the gathering, use, and security of your data. This Privacy Policy describes how we manage personal and business-related information in all of our virtual office and co-working services.",
   },
   {
     number: "02",
     title: "Information We Collect",
-    content: "Workforge may collect the following information:",
+    content: "We may collect:",
     list: [
-      "Full name, contact number, email address",
-      "Business or company details (if applicable)",
-      "Payment and billing information",
-      "Workspace usage data (WiFi logs, access records)",
-      "CCTV footage for security purposes",
+      "Basic personal details (name, phone number, email)",
+      "Business or company information (if applicable)",
+      "Payment and billing details",
+      "Workspace usage data (entry logs, WiFi access)",
+      "CCTV recordings for safety",
+      "Visitor details for access management",
     ],
   },
   {
     number: "03",
-    title: "How We Use Your Information",
-    content: "Your data is used to:",
+    title: "How We Use Information",
+    content: "Your information is used to:",
     list: [
-      "Provide and manage Workforge services",
-      "Process bookings and memberships",
-      "Enhance customer experience",
-      "Maintain safety, security, and compliance",
+      "Provide and manage our services",
+      "Handle bookings, memberships, and payments",
+      "Maintain security and smooth operations",
+      "Improve overall user experience",
     ],
   },
   {
     number: "04",
-    title: "Data Sharing Policy",
-    content:
-      "Your personal information is neither sold nor rented by Workforge. We may share data only with:",
+    title: "Virtual Office & Address Usage",
+    content: "If you use our virtual office services:",
     list: [
-      "Legal authorities when required",
-      "Trusted payment processing partners",
-      "Internal administrative teams",
+      "Workforge only provides the address facility",
+      "We are not responsible for your business activities or communications",
+      "You are fully responsible for legal compliance and registrations",
+      "You are responsible for handling all official and government-related concerns.",
     ],
   },
   {
     number: "05",
-    title: "Data Security",
-    content: "Workforge implements strict security measures, including:",
+    title: "Address Misuse",
+    content:
+      "It is not permitted to use our address for the following:",
     list: [
-      "Secure data storage systems",
-      "Controlled access to sensitive information",
-      "Continuous monitoring and protection protocols",
+      "Illegal activities",
+      "False or misleading registrations",
+      "Unauthorized business operations",
     ],
+    note:
+      "Workforge may suspend services or report such cases if needed.",
   },
   {
     number: "06",
-    title: "Cookies & Website Tracking",
+    title: "Communication Handling",
+    content: "We may support:",
     list: [
-      "Cookies may be used on our website to enhance analytics and user experience.",
-      "Users can control cookie preferences through browser settings",
+      "Receiving business calls",
+      "Managing visitor records",
+      "Mail and message forwarding",
     ],
+    note:
+      "This is done just to support your service and is not kept longer than necessary.",
   },
   {
     number: "07",
-    title: "Your Rights",
-    content: "As a Workforge user, you have the right to:",
+    title: "Visitor Information",
+    content: "For safety purposes, we may collect:",
     list: [
-      "Access your personal data",
-      "Request corrections or updates",
-      "Request deletion (subject to legal obligations)",
+      "Name",
+      "Contact number",
+      "Purpose of visit",
     ],
+    note: "This helps us maintain a secure environment.",
   },
   {
     number: "08",
-    title: "Data Retention",
-    content: "Workforge retains your data only as long as necessary for:",
-    list: ["Service delivery", "Legal and compliance requirements"],
+    title: "Network Usage",
+    content: "Our internet network may be monitored for:",
+    list: [
+      "Security",
+      "Legal compliance",
+      "Technical support",
+    ],
+    note:
+      "Basic system logs, such as device information and access time, may be recorded, but we do not monitor private material.",
   },
   {
     number: "09",
-    title: "Third-Party Services",
-    content:
-      "Workforge is not responsible for the privacy practices of third-party websites or services linked from our platform.",
+    title: "Data Sharing",
+    content: "We do not sell or trade your data. Information may be shared only:",
+    list: [
+      "If required by law",
+      "With payment or service providers",
+      "For internal operations",
+    ],
   },
   {
     number: "10",
-    title: "Policy Updates",
-    content:
-      "Workforge may update this Privacy Policy periodically. Any major updates will be communicated appropriately.",
+    title: "Data Security",
+    content: "We take appropriate precautions to safeguard your information, such as:",
+    list: ["Secure systems", "Limited access", "Ongoing monitoring"],
+  },
+  {
+    number: "11",
+    title: "User Rights",
+    content: "You can:",
+    list: [
+      "Request access to your data",
+      "Ask for corrections",
+      "Request deletion (as per legal requirements)",
+    ],
+  },
+  {
+    number: "12",
+    title: "Data Retention",
+    content: "We only retain your information for the following purposes:",
+    list: [
+      "Providing services",
+      "Meeting legal and compliance requirements",
+    ],
   },
 ];
 
@@ -157,6 +195,12 @@ export default function PrivacyPolicyContent() {
                           </li>
                         ))}
                       </ul>
+                    )}
+
+                    {section.note && (
+                      <p className="text-slate-600 font-light leading-relaxed text-base md:text-lg mt-4">
+                        {section.note}
+                      </p>
                     )}
                   </div>
                 </div>

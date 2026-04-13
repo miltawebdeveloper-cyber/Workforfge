@@ -1,4 +1,4 @@
-import { VirtualOfficeDetailsSection, VirtualOfficeHeroSection, Intro, HeroSection, SolutionsSection, QuickHighlightsSection, FinalCtaSection, WhyChoose } from "@/components/pages/virtual-office";
+import { VirtualOfficeDetailsSection, VirtualOfficeHeroSection, Intro, HeroSection, SolutionsSection, QuickHighlightsSection, FinalCtaSection, WhyChoose, FaqSection } from "@/components/pages/virtual-office";
 
 export const metadata = {
   title: "Virtual Office",
@@ -17,6 +17,7 @@ export default function VirtualOfficePage() {
       <QuickHighlightsSection />
       <WhyChoose />
       <SolutionsSection />
+      <FaqSection />
       <FinalCtaSection />
 
     </main>

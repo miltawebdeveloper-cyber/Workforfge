@@ -13,7 +13,7 @@ export default function AboutWorkForgeSection() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-white overflow-hidden">
+    <section id="about" className="pt-32 pb-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side: Content */}

@@ -6,3 +6,4 @@ export { default as SolutionsSection } from "./SolutionsSection";
 export { default as QuickHighlightsSection } from "./QuickHighlightsSection";
 export { default as FinalCtaSection } from "./FinalCtaSection";
 export { default as WhyChoose } from "./whyChoose";
+export { default as FaqSection } from "./FaqSection";

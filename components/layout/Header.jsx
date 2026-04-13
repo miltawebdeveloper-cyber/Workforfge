@@ -59,7 +59,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
+        className={`sticky top-0 w-full z-[80] transition-all duration-300 ${isScrolled || isMobileMenuOpen
             ? "py-3 md:py-4 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm"
             : "py-4 md:py-6 bg-transparent"
           }`}
@@ -119,7 +119,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 right-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xl flex flex-col lg:hidden"
+                className="absolute top-full left-0 right-0 z-[81] w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xl flex flex-col lg:hidden"
               >
                 <div className="flex flex-col px-6 py-6 gap-2 max-h-[80vh] overflow-y-auto">
                   {navLinks.map((link) => (

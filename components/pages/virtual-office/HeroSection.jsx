@@ -79,7 +79,7 @@ export default function HeroSection() {
             <m.h2
               variants={fadeInUp}
               className="text-3xl md:text-5xl lg:text-6xl font-light text-secondary tracking-tight text-[#1d45cc] leading-[1.1]">
-              Virtual Office in Coimbatore
+              Having Just Virtual Office
               <br />
               <span className="text-primary font-bold italic"> at WorkForge</span>
             </m.h2>

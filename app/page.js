@@ -56,6 +56,8 @@ import {
   HeroSection,
   QuickHighlightsSection,
   SolutionsSection,
+  VisionMissionSection,
+  FaqSection,
 } from "@/components/pages/home";
 
 export default function Home() {
@@ -64,9 +66,12 @@ export default function Home() {
       <HeroSection />
       <QuickHighlightsSection />
       <AboutWorkForgeSection />
+      <VisionMissionSection />
       <SolutionsSection />
       <AmenitiesSection />
+      <FaqSection />
       <FinalCtaSection />
+      
     </main>
   );
 }

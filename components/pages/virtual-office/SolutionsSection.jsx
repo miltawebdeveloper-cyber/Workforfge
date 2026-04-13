@@ -8,7 +8,8 @@ import {
   Building,
   Mail,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Calculator
 } from "lucide-react";
 
 export default function SolutionsSection() {
@@ -122,13 +123,18 @@ export default function SolutionsSection() {
           {/* CTA Card */}
           <m.div
             variants={itemVariants}
-            className="bg-highlight p-6 sm:p-10 rounded-2xl sm:rounded-3xl flex flex-col justify-center text-white"
+            className="group bg-white p-6 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(33,89,220,0.1)] hover:border-highlight/20 flex flex-col justify-center"
           >
-            <h3 className="text-3xl font-black mb-6 leading-tight">CA Support</h3>
-            <p className="text-white/80 font-medium mb-8">Professional assistance for compliance and filings.</p>
-            <Link href="/contact" className="block bg-white text-highlight font-black py-4 rounded-xl uppercase tracking-widest text-sm hover:scale-105 transition-transform text-center">
-              Contact Sales
-            </Link>
+            <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+              <Calculator className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-black tracking-tight text-primary mb-4">
+              CA Support
+            </h3>
+            <p className="text-slate-500 font-medium leading-relaxed mb-8">
+              Professional assistance for compliance and filings.
+            </p>
+            
           </m.div>
         </m.div>
       </div>

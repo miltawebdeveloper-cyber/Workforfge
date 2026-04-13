@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -35,11 +36,22 @@ export default function Footer() {
               Contact
             </h5>
             <address className="not-italic text-sm text-slate-500 space-y-2 font-light">
-              <p className="hover:text-[#0047cc] transition-colors cursor-pointer">contact@workforge.in</p>
-              <p>No. 175, Sri Sai Tower, 3rd floor,
-                Bharathi Colony Rd, Peelamedu,
-                Coimbatore, Tamil Nadu 641004, India.</p>
-
+              <p className="flex items-start gap-2">
+                <Mail className="w-4 h-4 mt-0.5 text-[#0047cc] shrink-0" />
+                <a
+                  href="mailto:contact@workforge.in"
+                  className="hover:text-[#0047cc] transition-colors cursor-pointer"
+                >
+                  contact@workforge.in
+                </a>
+              </p>
+              <p className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 text-[#0047cc] shrink-0" />
+                <span>
+                  No. 175, Sri Sai Tower, 3rd floor, Bharathi Colony Rd, Peelamedu,
+                  Coimbatore, Tamil Nadu 641004, India.
+                </span>
+              </p>
             </address>
           </div>
 

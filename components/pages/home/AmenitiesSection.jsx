@@ -32,7 +32,7 @@ export default function AmenitiesSection() {
     <section id="amenities" className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-center mb-20 gap-8">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -50,9 +50,9 @@ export default function AmenitiesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black tracking-tight text-primary leading-tight">
-              Everything You Need to <br />
-              Work Better With Us
+              className="text-5xl md:text-6xl font-black tracking-tight text-primary leading-tight">
+            Marketing Solutions to <br />
+            Whomever We Onboard
             </m.h2>
           </div>
 
@@ -63,7 +63,7 @@ export default function AmenitiesSection() {
             transition={{ delay: 0.3 }}
             className="text-lg text-slate-500 max-w-sm font-medium border-l-2 border-slate-100 pl-8"
           >
-            We handle the infrastructure so you can handle the innovation.
+           24/7 accounting support for companies we onboard on request 
           </m.p>
         </div>
 

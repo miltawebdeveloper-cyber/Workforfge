@@ -5,18 +5,18 @@ const sections = [
     number: "01",
     title: "Introduction",
     content:
-      "Welcome to Workforge, a modern co-working and shared workspace solution designed for professionals, startups, and businesses. By utilizing or gaining access to Workforge services, you agree to the following Terms of Service.",
+      "Welcome to Workforge, a modern co-working and shared workspace solution designed for professionals, startups, and businesses. By accessing or using Workforge services, you agree to comply with the following Terms of Service.",
   },
   {
     number: "02",
     title: "Services Offered",
     content: "Workforge provides flexible workspace solutions, including:",
     list: [
-      "Shared desks & private office spaces",
-      "High-speed internet (WiFi)",
-      "Meeting & conference rooms",
+      "Shared desks and private office spaces",
+      "High-speed internet (Wi-Fi)",
+      "Meeting and conference rooms",
       "CCTV-secured premises",
-      "Power backup & essential utilities",
+      "Power backup and essential utilities",
       "Common facilities (pantry, lounge, restrooms)",
     ],
   },
@@ -24,71 +24,94 @@ const sections = [
     number: "03",
     title: "Membership & Usage Policy",
     list: [
-      "Access to Workforge is granted only to registered members or authorized users",
+      "Access is granted only to registered members or authorized users",
       "All services must be used strictly for legal and professional purposes",
-      "Any activity causing disturbance, misuse, or harm to others is strictly prohibited",
+      "Any activity causing disturbance, misuse, or harm is strictly prohibited",
       "Shared resources are subject to fair usage policies",
     ],
   },
   {
     number: "04",
-    title: "Payment Terms",
-    list: [
-      "All plans (daily, weekly, and monthly) must be paid in advance",
-      "Failure to pay on time may result in suspension of access",
-      "Refunds, if applicable, are subject to Workforge management approval",
-    ],
-  },
-  {
-    number: "05",
     title: "User Responsibilities",
-    content: "All users of Workforge agree to:",
+    content: "All users agree to:",
     list: [
-      "Maintain cleanliness and a professional environment",
-      "Respect other members' privacy and workspace",
-      "Avoid damage to property (damages will be chargeable)",
+      "Maintain cleanliness and professionalism",
+      "Respect other members’ privacy and workspace",
+      "Avoid damage to property (charges applicable for damages)",
       "Follow all safety and operational guidelines",
     ],
   },
   {
-    number: "06",
+    number: "05",
     title: "Security & Surveillance",
     list: [
-      "Workforge premises are monitored via CCTV for safety and security",
-      "Users must not misuse or tamper with security systems",
+      "Premises are monitored via CCTV for safety and security",
+      "Users must not tamper with security systems",
       "Workforge is not responsible for loss or theft of personal belongings",
     ],
   },
   {
-    number: "07",
-    title: "Access & Operating Hours",
+    number: "06",
+    title: "Virtual Office Services",
     list: [
-      "Access is based on the selected membership plan (fixed hours / 24x7 access)",
-      "Sharing login/access credentials is strictly prohibited",
+      "Business address usage is limited to approved and lawful activities",
+      "Storage of goods is strictly prohibited",
+      "Walk-in operations are not permitted without prior approval",
+      "Workforge is not responsible for any client liabilities",
+      "Government or official notices will only be received and forwarded",
     ],
+  },
+  {
+    number: "07",
+    title: "Mail & Courier Handling",
+    content:
+      "Workforge may receive mail and courier deliveries on behalf of clients as a convenience service. However, Workforge is not responsible for any delays, loss, or damage caused by courier or postal service providers.",
   },
   {
     number: "08",
-    title: "Suspension & Termination",
-    content: "Workforge reserves the right to:",
+    title: "Internet Acceptable Use",
+    content: "Users must not:",
     list: [
-      "If these rules are broken, access may be suspended or terminated",
-      "Modify or discontinue services without prior notice",
+      "Download or distribute illegal content",
+      "Operate servers or hosting services",
+      "Use excessive bandwidth, affecting others",
+      "Engage in unlawful or harmful online activities",
     ],
+    note:
+      "Any violation may result in immediate suspension or termination of services.",
   },
   {
     number: "09",
-    title: "Limitation of Liability",
+    title: "Meeting Room Policy",
     list: [
-      "Workforge shall not be liable for business losses, data loss, or indirect damages",
-      "Users operate within the premises at their own risk",
+      "Booking is required for all meeting rooms",
+      "Usage beyond the booked time will be charged on an hourly basis",
+      "Meetings involving illegal or unauthorized activities are strictly prohibited",
     ],
   },
   {
     number: "10",
-    title: "Changes to Terms",
+    title: "No Tenancy Rights",
     content:
-      "These Terms of Service are subject to change at any moment by Workforge. Continued usage implies acceptance of updated terms.",
+      "Use of coworking or virtual office services does not create any tenancy, leasehold, or ownership rights. Workforge retains full ownership and control of the premises at all times.",
+  },
+  {
+    number: "11",
+    title: "Service Interruptions (Force Majeure)",
+    content:
+      "Workforge shall not be held liable for service interruptions caused by events beyond its control, including:",
+    list: [
+      "Internet outages",
+      "Power failures",
+      "Government restrictions",
+      "Natural disasters",
+    ],
+  },
+  {
+    number: "12",
+    title: "Indemnification",
+    content:
+      "Clients agree to indemnify and hold Workforge harmless against any claims, damages, or liabilities arising from their business activities, communications, or use of the Workforge address and services.",
   },
 ];
 
@@ -161,6 +184,12 @@ export default function TermsOfServiceContent() {
                           </li>
                         ))}
                       </ul>
+                    )}
+
+                    {section.note && (
+                      <p className="text-slate-600 font-light leading-relaxed text-base md:text-lg mt-4">
+                        {section.note}
+                      </p>
                     )}
                   </div>
                 </div>

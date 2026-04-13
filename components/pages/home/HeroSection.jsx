@@ -84,7 +84,7 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-slate-400 leading-[1.1]">
               Premium Coworking <br />
-              <span className="text-primary font-bold italic">Space in Coimbatore</span>
+              <span className="text-primary font-bold italic">Space </span>
             </m.h2>
           </div>
 

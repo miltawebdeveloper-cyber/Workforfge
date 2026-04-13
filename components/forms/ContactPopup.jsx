@@ -46,24 +46,24 @@ export default function ContactPopup({ isOpen, onClose }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[101] flex items-center justify-center p-4 overscroll-contain"
+            className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-4 overscroll-contain"
           >
-            <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto overscroll-contain">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-lg max-h-[92vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain">
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
                 aria-label="Close popup"
               >
                 <X className="w-5 h-5 text-slate-600" />
               </button>
 
               {/* Header */}
-              <div className="px-8 pt-8 pb-4">
+              <div className="px-5 sm:px-8 pr-14 sm:pr-16 pt-7 sm:pt-8 pb-3 sm:pb-4">
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-highlight mb-2">
                   Get in Touch
                 </p>
-                <h3 className="text-2xl font-black text-primary tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-black text-primary tracking-tight">
                   Request Pricing Details
                 </h3>
                 <p className="text-sm text-slate-500 font-light mt-2">
@@ -72,7 +72,7 @@ export default function ContactPopup({ isOpen, onClose }) {
               </div>
 
               {/* Form */}
-              <div className="px-8 pb-8">
+              <div className="px-5 sm:px-8 pb-6 sm:pb-8">
                 <InquiryForm />
               </div>
             </div>
@@ -82,4 +82,3 @@ export default function ContactPopup({ isOpen, onClose }) {
     </AnimatePresence>
   );
 }
-

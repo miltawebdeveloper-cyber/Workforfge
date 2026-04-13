@@ -7,3 +7,5 @@ export { default as HeroSection } from "./HeroSection";
 export { default as MembershipSection } from "./MembershipSection";
 export { default as QuickHighlightsSection } from "./QuickHighlightsSection";
 export { default as SolutionsSection } from "./SolutionsSection";
+export { default as VisionMissionSection } from "./VisionMissionSection";
+export { default as FaqSection } from "./FaqSection";

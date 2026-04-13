@@ -1,4 +1,5 @@
 import { InquiryForm } from "@/components/forms";
+import Image from "next/image";
 
 export default function ContactFormSection() {
   return (
@@ -13,15 +14,20 @@ export default function ContactFormSection() {
               <p><span className="font-bold text-primary">Address:</span> No. 175, Sri Sai Tower, 3rd floor, Bharathi Colony Rd, Peelamedu, Coimbatore, Tamil Nadu 641004, India.</p>
             </div>
           </div>
-          <div className="border border-slate-200 bg-slate-50 h-72 w-full overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7832.348598828587!2d76.99521!3d11.025546!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859412de57513%3A0x6589c77f7c346bfa!2sMilta%20Accounting%20Services%20Private%20Limited!5e0!3m2!1sen!2sin!4v1775742677560!5m2!1sen!2sin"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div className="group relative h-72 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+            <Image
+              src="/Contact-us.jpg"
+              alt="Contact Workforge"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-white/70 shadow-sm">
+              <p className="text-[10px] font-black tracking-[0.2em] uppercase text-primary">
+                Visit Workforge
+              </p>
+            </div>
           </div>
           {/*<div className="flex flex-col sm:flex-row gap-4">
             <button className="px-6 py-4 bg-primary text-white font-bold uppercase tracking-[0.2em] hover:bg-[#2159dc] transition-all duration-300">

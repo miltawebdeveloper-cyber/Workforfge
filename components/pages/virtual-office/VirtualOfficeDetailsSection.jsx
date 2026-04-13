@@ -5,7 +5,7 @@ export default function VirtualOfficeDetailsSection() {
     "MCA Registration Support",
     "Mail Handling",
     "NOC Documentation",
-    "CA Support",
+    "CA Documentation",
   ];
 
   const idealFor = [
