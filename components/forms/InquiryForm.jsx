@@ -155,7 +155,7 @@ export default function InquiryForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full bg-transparent py-2.5 md:py-3 outline-none text-base md:text-lg font-light h-28 md:h-32 resize-none text-primary"
+          className="w-full bg-transparent py-2.5 md:py-3 outline-none text-base md:text-lg font-light h-12 md:h-16 resize-none text-primary"
         ></textarea>
       </div>
 
